@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine :3</title>
+  </head>
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 350px;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #ff5fa2;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #noBtn {
+      background: #ddd;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img
+      id="gif"
+      src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+      alt="Cute cats hugging"
+    />
+
+    <h1 id="question">Will you be my Valentine? 💕</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 💖</button>
+      <button id="noBtn">No 🙃</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const gif = document.getElementById("gif");
+    const question = document.getElementById("question");
+
+    // NO button runs away
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    // YES button changes everything
+    yesBtn.addEventListener("click", () => {
+      gif.src = "https://media.giphy.com/media/l41lZxzroU33typuU/giphy.gif";
+      question.textContent = "YAY!!! 💖🥰";
+      noBtn.style.display = "none";
+      yesBtn.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
